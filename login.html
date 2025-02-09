@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Girişi - Ləzzət Durağı</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+</head>
+<body class="admin-body">
+    <div class="admin-login-container">
+        <div class="admin-login-box">
+            <h2><i class="fas fa-utensils"></i> Ləzzət Durağı</h2>
+            <h3>Admin Girişi</h3>
+            <form id="loginForm" onsubmit="loginAdmin(event)">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="username" placeholder="İstifadəçi Adı" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="password" placeholder="Şifrə" required>
+                </div>
+                <button type="submit" class="admin-btn">Daxil Ol</button>
+            </form>
+        </div>
+    </div>
+    <script src="./assets/script/admin.js"></script>
+</body>
+</html> 

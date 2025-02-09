@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Ləzzət Durağı</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/admin.css">
+</head>
+<body>
+    <nav class="admin-nav">
+        <div class="container">
+            <div class="admin-header">
+                <h1><i class="fas fa-utensils"></i> Admin Panel</h1>
+                <div class="user-info-header">
+                    <span class="current-user">
+                        <i class="fas fa-user"></i>
+                        <span id="currentUserName"></span>
+                    </span>
+                    <button onclick="logout()" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Çıxış
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container admin-container">
+        <div class="admin-sidebar">
+            <button class="admin-tab active" onclick="showTab('menu')">
+                <i class="fas fa-list"></i> Menyu İdarəsi
+            </button>
+            <button class="admin-tab" onclick="showTab('add')">
+                <i class="fas fa-plus"></i> Yeni Məhsul Əlavə Et
+            </button>
+            <button class="admin-tab" onclick="showTab('users')">
+                <i class="fas fa-users"></i> İstifadəçilər
+            </button>
+            <button class="admin-tab" onclick="showTab('categories')">
+                <i class="fas fa-tags"></i> Kateqoriyalar
+            </button>
+        </div>
+
+        <div class="admin-content">
+            <div id="menuTab" class="tab-content active">
+                <h2>Menyu İdarəsi</h2>
+                <div class="menu-items-container">
+                    <!-- JavaScript ilə doldurulacaq -->
+                </div>
+            </div>
+
+            <div id="addTab" class="tab-content">
+                <h2>Yeni Məhsul Əlavə Et</h2>
+                <form id="addItemForm" onsubmit="return addMenuItem(event)">
+                    <div class="form-group">
+                        <label>Məhsul Adı:</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Kateqoriya:</label>
+                        <select name="category" required>
+                            <option value="">Kateqoriya Seçin</option>
+                            <option value="Şorbalar">Şorbalar</option>
+                            <option value="Salatlar">Salatlar</option>
+                            <option value="Əsas Yeməklər">Əsas Yeməklər</option>
+                            <option value="Şirniyyatlar">Şirniyyatlar</option>
+                            <option value="İçkilər">İçkilər</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Qiymət (AZN):</label>
+                        <input type="number" name="price" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Təsvir:</label>
+                        <textarea name="description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Şəkil URL:</label>
+                        <input type="url" name="imageUrl" required>
+                    </div>
+                    <button type="submit" class="admin-btn">Məhsul Əlavə Et</button>
+                </form>
+            </div>
+
+            <!-- İstifadəçilər -->
+            <div id="usersTab" class="tab-content">
+                <div class="users-header">
+                    <h2>İstifadəçilər</h2>
+                    <button class="admin-btn" onclick="showAddUserForm()">
+                        <i class="fas fa-plus"></i> Yeni İstifadəçi
+                    </button>
+                </div>
+                
+                <div class="users-list">
+                    <!-- JavaScript ilə doldurulacaq -->
+                </div>
+
+                <!-- Yeni İstifadəçi Modal -->
+                <div id="addUserModal" class="admin-modal">
+                    <div class="admin-modal-content">
+                        <span class="admin-modal-close" onclick="closeAddUserModal()">&times;</span>
+                        <h3>Yeni İstifadəçi Əlavə Et</h3>
+                        <form id="addUserForm" onsubmit="return addUser(event)">
+                            <div class="form-group">
+                                <label>Ad Soyad:</label>
+                                <input type="text" name="fullName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>İstifadəçi Adı:</label>
+                                <input type="text" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Şifrə:</label>
+                                <input type="password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Rol:</label>
+                                <select name="role" required>
+                                    <option value="admin">Admin</option>
+                                    <option value="manager">Menecer</option>
+                                    <option value="staff">İşçi</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="admin-btn">Əlavə Et</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kategoriler -->
+            <div id="categoriesTab" class="tab-content">
+                <div class="categories-header">
+                    <h2>Kateqoriyalar</h2>
+                    <button class="admin-btn" onclick="showAddCategoryForm()">
+                        <i class="fas fa-plus"></i> Yeni Kateqoriya
+                    </button>
+                </div>
+                <div class="categories-grid">
+                    <!-- JavaScript ilə doldurulacaq -->
+                </div>
+
+                <!-- Yeni Kateqoriya Modal -->
+                <div id="addCategoryModal" class="admin-modal">
+                    <div class="admin-modal-content">
+                        <span class="admin-modal-close" onclick="closeAddCategoryModal()">&times;</span>
+                        <h3>Yeni Kateqoriya Əlavə Et</h3>
+                        <form id="addCategoryForm" onsubmit="return addCategory(event)">
+                            <div class="form-group">
+                                <label>Kateqoriya Adı:</label>
+                                <input type="text" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>İkon (Font Awesome):</label>
+                                <input type="text" name="icon" placeholder="fas fa-utensils" required>
+                            </div>
+                            <button type="submit" class="admin-btn">Əlavə Et</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Düzenleme Modalı -->
+            <div id="editItemModal" class="admin-modal">
+                <div class="admin-modal-content">
+                    <span class="admin-modal-close" onclick="closeEditItemModal()">&times;</span>
+                    <h3>Məhsulu Düzənlə</h3>
+                    <form id="editItemForm" onsubmit="return updateMenuItem(event)">
+                        <input type="hidden" name="itemId">
+                        <div class="form-group">
+                            <label>Məhsul Adı:</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Kateqoriya:</label>
+                            <select name="category" required>
+                                <!-- JavaScript ilə doldurulacaq -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Qiymət (AZN):</label>
+                            <input type="number" name="price" step="0.01" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Təsvir:</label>
+                            <textarea name="description" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Şəkil URL:</label>
+                            <input type="url" name="imageUrl" required>
+                        </div>
+                        <button type="submit" class="admin-btn">Yadda Saxla</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Kategoriler bölümüne eklenecek -->
+            <div id="editCategoryModal" class="admin-modal">
+                <div class="admin-modal-content">
+                    <span class="admin-modal-close" onclick="closeEditCategoryModal()">&times;</span>
+                    <h3>Kateqoriyanı Düzənlə</h3>
+                    <form id="editCategoryForm" onsubmit="return updateCategory(event)">
+                        <input type="hidden" name="categoryId">
+                        <div class="form-group">
+                            <label>Kateqoriya Adı:</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>İkon (Font Awesome):</label>
+                            <input type="text" name="icon" required>
+                        </div>
+                        <button type="submit" class="admin-btn">Yadda Saxla</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/script/admin.js"></script>
+</body>
+</html> 

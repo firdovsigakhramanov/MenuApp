@@ -1,0 +1,66 @@
+{
+    "menyu": [
+        {
+            "id": 1,
+            "name": "Mərci Şorbası",
+            "description": "Ənənəvi Türk mətbəxinin vazkeçilməzi, xüsusi ədviyyatlarla zənginləşdirilmiş mərci şorbası",
+            "price": 5.50,
+            "category": "Şorbalar",
+            "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80"
+        },
+        {
+            "id": 2,
+            "name": "Ezogelin Çorbası",
+            "description": "Kırmızı mercimek, bulgur ve nane ile hazırlanan geleneksel çorba",
+            "price": 35.00,
+            "category": "Çorbalar",
+            "imageUrl": "https://images.unsplash.com/photo-1578020190125-f4f7c18bc9cb?w=800&q=80"
+        },
+        {
+            "id": 3,
+            "name": "Yayla Çorbası",
+            "description": "Yoğurt ve pirinç ile hazırlanan nefis bir çorba",
+            "price": 30.00,
+            "category": "Çorbalar",
+            "imageUrl": "https://images.unsplash.com/photo-1616501268209-edfcb4b6ff6c?w=800&q=80"
+        },
+        {
+            "id": 4,
+            "name": "Çoban Salatı",
+            "description": "Domates, salatalık, biber ve soğan ile hazırlanan klasik Türk salatası",
+            "price": 45.00,
+            "category": "Salatalar",
+            "imageUrl": "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=800&q=80"
+        },
+        {
+            "id": 5,
+            "name": "Sezar Salatı",
+            "description": "Izgara tavuk, marul, kruton ve özel Sezar sosu ile",
+            "price": 65.00,
+            "category": "Salatalar",
+            "imageUrl": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=800&q=80"
+        },
+        {
+            "id": 6,
+            "name": "Ton Balıklı Salata",
+            "description": "Ton balığı, mısır, havuç ve özel sos ile hazırlanan salata",
+            "price": 70.00,
+            "category": "Salatalar",
+            "imageUrl": "https://images.unsplash.com/photo-1511994714008-b6d68a8b32a2?w=800&q=80"
+        }
+    ],
+    "kateqoriya": [
+        {
+            "id": 1,
+            "name": "Səhər Yeməkləri",
+            "description": "Səhər yeməkləri",
+            "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80"
+        },
+        {
+            "id": 2,
+            "name": "Əsas Yeməkləri",
+            "description": "Əsas yeməklər",
+            "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&q=80"
+        }
+    ]
+}

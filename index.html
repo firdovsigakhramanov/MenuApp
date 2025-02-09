@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ləzzət Durağı - Restoran Menyusu</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-header">
+          <h1 class="logo"><i class="fas fa-utensils"></i> Ləzzət Durağı</h1>
+          <div class="header-btns">
+            <a href="./login.html" class="login-btn__container">
+              <i class="fa-solid fa-user login-btn"></i>
+            </a>
+            <button class="favorites-toggle">
+              <i class="fas fa-heart"></i>
+              <span class="favorites-count">0</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1>Əvəzsiz Ləzzətlər</h1>
+        <p>Ən xüsusi reseptlərimizlə sizi gözləyirik</p>
+        <p><a href="./login.html" class="login-button">Giriş Et</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="menu-title">Menyumuz</h2>
+      <div class="nav-categories">
+        <button class="category-btn active" data-category="all">Hamısı</button>
+        <button class="category-btn" data-category="Şorbalar">Şorbalar</button>
+        <button class="category-btn" data-category="Salatlar">Salatlar</button>
+        <button class="category-btn" data-category="Əsas Yeməklər">
+          Əsas Yeməklər
+        </button>
+        <button class="category-btn" data-category="Şirniyyatlar">
+          Şirniyyatlar
+        </button>
+        <button class="category-btn" data-category="İçkilər">İçkilər</button>
+      </div>
+      <div id="menu-container" class="menu-grid">
+        <!-- JavaScript ilə doldurulacaq -->
+      </div>
+    </div>
+
+    <!-- Detay Modal -->
+    <div id="menuModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalContent">
+          <!-- JavaScript ilə doldurulacaq -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Favorilər Sidebar -->
+    <div class="favorites-sidebar">
+      <div class="favorites-header">
+        <h3><i class="fas fa-heart"></i> Favorilərim</h3>
+        <button class="close-favorites"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="favorites-list">
+        <!-- JavaScript ilə doldurulacaq -->
+      </div>
+      <div class="favorites-empty">
+        <i class="fas fa-heart-broken"></i>
+        <p>Hələ ki, favori məhsulunuz yoxdur.</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3><i class="fas fa-clock"></i> İş Saatları</h3>
+            <p>Həftəiçi: 09:00 - 22:00</p>
+            <p>Həftəsonu: 10:00 - 23:00</p>
+          </div>
+          <div class="footer-section">
+            <h3><i class="fas fa-phone"></i> Əlaqə</h3>
+            <p>Tel: (012) 555 55 55</p>
+            <p>Email: info@lezzetduragi.az</p>
+          </div>
+          <div class="footer-section">
+            <h3><i class="fas fa-map-marker-alt"></i> Ünvan</h3>
+            <p>Ləzzət Küçəsi No:1</p>
+            <p>Bakı / Azərbaycan</p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Ləzzət Durağı - Bütün Hüquqlar Qorunur</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/script/script.js"></script>
+  </body>
+</html>
