@@ -371,7 +371,7 @@ body {
 }
 
 .modal-price::before {
-  content: "₺";
+  content: "₼";
   font-size: 1.5rem;
   margin-right: 4px;
 }
