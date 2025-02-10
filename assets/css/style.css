@@ -139,6 +139,7 @@ body {
 }
 
 .menu-item {
+  width: 100%;
   background: white;
   border-radius: 15px;
   overflow: hidden;
@@ -224,7 +225,7 @@ body {
 }
 
 .price::before {
-  content: "₺";
+  content: "₼";
   font-size: 0.9rem;
   margin-right: 1px;
 }

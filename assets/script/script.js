@@ -42,7 +42,34 @@ let menuItems = [
         description: "Ənənəvi üsulla hazırlanan Türk qəhvəsi",
         price: 3.00,
         category: "İçkilər",
-        imageUrl: "https://images.unsplash.com/photo-1578374173705-969cbe6f2d6b?w=800&q=80"
+        imageUrl: "https://doz.coffee/cdn/shop/articles/Untitled_design_Large_c7956b39-2824-42be-8c03-821a963704fd.jpg?v=1696322204"
+    },
+    {
+        id: 6,
+        name: "Ice Tea",
+        description: "Soyuq Çay",
+        price: 5.00,
+        category: "İçkilər",
+        imageUrl: "https://www.everydaycheapskate.com/wp-content/uploads/20240705-how-to-make-iced-tea-glass-with-ice-cubes-and-sliced-and-whole-lemons.png"
+    },
+    // Salatlar
+
+    // İçecekler
+    {
+        id: 7,
+        name: "Çoban Salatı",
+        description: "Ənənəvi üsulla hazırlanan milli salat",
+        price: 3.00,
+        category: "Salatlar",
+        imageUrl: "https://sabalid.az/uploads/posts/2021-01/1612008164_coban-salat-507x285.jpg"
+    },
+    {
+        id: 8,
+        name: "Paytaxt Salatı",
+        description: "Ən dadlı təamlarımızdandır.",
+        price: 5.00,
+        category: "Salatlar",
+        imageUrl: "https://e-saglam.az/storage/news/middle/images/2023/12/maxresdefault.jpg"
     }
 ];
 
@@ -58,7 +85,7 @@ function renderMenuItems(items) {
     const menuContainer = document.getElementById('menu-container');
     menuContainer.innerHTML = items.map(item => `
         <div class="menu-item" onclick="showDetails(${item.id})">
-            <img src="${item.imageUrl}" alt="${item.name}">
+            <img src="${item.imageUrl}" class="menu-item__img" alt="${item.name}">
             <div class="menu-item-content">
                 <h3>${item.name}</h3>
                 <p class="description">${item.description}</p>
